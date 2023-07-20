@@ -3,6 +3,8 @@
 using namespace cv;
 using namespace std;
 
+namespace osv {
+
 /**  */
 class Detector {
   enum Mode { Default, Daimler } m;
@@ -51,3 +53,4 @@ class Detector {
     r.height = cvRound(r.height * 0.8);
   }
 };
+}  // namespace osv

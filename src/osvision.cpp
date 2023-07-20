@@ -8,10 +8,21 @@
 
 using namespace std;
 using namespace cv;
+using namespace osv;
 
 int main(int argc, char** argv) {
 
   InputFeed inputFeed(argc, argv);
+
+  Mat frame;
+
+  for (;;) {
+    frame = inputFeed.getFrame();
+    if (frame.empty()) {
+      cout << "Finished reading: empty frame" << endl;
+      break;
+    }
+  }
 
   cout << " Usage: ImageToLoadAndDisplay" << endl;
   if (argc != 2) {
@@ -33,7 +44,6 @@ int main(int argc, char** argv) {
 
   imshow("Display window", image);  // Show our image inside it.
   waitKey(0);                       // Wait for a keystroke in the window
-
 
   return 0;
 }

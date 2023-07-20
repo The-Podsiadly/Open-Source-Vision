@@ -7,6 +7,8 @@
 using namespace std;
 using namespace cv;
 
+namespace osv {
+
 /**
  *
 */
@@ -56,9 +58,7 @@ class InputFeed {
   }
 
  public:
-  InputFeed() {
-    throw invalid_argument("No arguments were provided");
-  }
+  InputFeed() { throw invalid_argument("No arguments were provided"); }
 
   InputFeed(int argc, char** argv) {
     CommandLineParser parser(argc, argv, keys);
@@ -81,3 +81,4 @@ class InputFeed {
     return frame;
   }
 }
+}  // namespace osv
