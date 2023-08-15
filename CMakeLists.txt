@@ -55,9 +55,10 @@ endif()
 
 # where to find our CMake modules
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-#message(STATUS "CMake module path: ${CMAKE_MODULE_PATH}")
-include(Installing)
 
+# message(STATUS "CMake module path: ${CMAKE_MODULE_PATH}")
+include(Installing)
+find_package(OpenCV REQUIRED)
 
 # ## TESTING
 option(BUILD_TESTS "Build unit tests" OFF)
